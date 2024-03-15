@@ -155,38 +155,6 @@ Transform:
   - {fileID: 1260084714}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &774943071
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 774943072}
-  m_Layer: 0
-  m_Name: ---GAMEMANAGER---
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &774943072
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 774943071}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.9647676, y: -3.0838656, z: 191.17755}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1085680493}
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &985571868
 GameObject:
   m_ObjectHideFlags: 0
@@ -302,6 +270,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a36157dbaf1350b4c8f8b8b4dc6337f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  resourceText: {fileID: 0}
 --- !u!1 &1028567589
 GameObject:
   m_ObjectHideFlags: 0
@@ -364,8 +333,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 875f3ec8c2ff51a44ba0f3ccd8d96f75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  actualValue: 0
-  targetValue: 0
+  correctedValue: 0
+  targetValue: 999
 --- !u!4 &1085680493
 Transform:
   m_ObjectHideFlags: 0
@@ -375,11 +344,11 @@ Transform:
   m_GameObject: {fileID: 1085680491}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.9647676, y: -3.0838656, z: 191.17755}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 774943072}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1222152867
 GameObject:
@@ -438,7 +407,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: 999
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -805,7 +774,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-  - {fileID: 774943072}
+  - {fileID: 1085680493}
   - {fileID: 1789002484}
   - {fileID: 1028567590}
   - {fileID: 306532372}

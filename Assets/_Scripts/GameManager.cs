@@ -4,10 +4,12 @@ using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{ 
-    [Range(0, 999999)]
-    [SerializeField] float targetValue;
-    public float actualValue;
+{
+    [Header("Resource Value")]
+
+    [Range(0, 999)]
+    [SerializeField] float targetValue = 999;
+    float actualValue = 999;
 
     public static GameManager Instance { get; private set; }
 
@@ -21,6 +23,14 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        actualValue = Mathf.Lerp(actualValue, targetValue, Time.deltaTime);
+        
     }
+
+    public int ActualValue()
+    {
+        actualValue = Mathf.Lerp(actualValue, targetValue, Time.deltaTime);
+        int correctedValue 
+
+        return correctedValue;
+    } 
 }

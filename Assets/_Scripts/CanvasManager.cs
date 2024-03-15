@@ -5,15 +5,16 @@ using TMPro;
 
 public class CanvasManager : MonoBehaviour
 {
-    TextMeshProUGUI resourceText;
+    [Header("Text Components")]
+    [SerializeField] TextMeshProUGUI resourceText;
 
     private void Awake()
     {
-        resourceText = GetComponentInChildren<TextMeshProUGUI>();
+        
     }
 
     private void Update()
     {
-        resourceText.text = GameManager.Instance.actualValue.ToString();
+        resourceText.text = GameManager.Instance.correctedValue.ToString();
     }
 }
