@@ -5,12 +5,18 @@ using UnityEngine;
 public class MouseManager : MonoBehaviour
 {
     public Transform mouseFollower;
-    private bool increaseSensitivity;
-    private float multiplier;
+    private MeshRenderer mouseRenderer;
+
+    public bool increaseSensitivity, shake;
+    private float multiplierX, multiplierY, outTimer;
+
     void Start()
     {
+        mouseRenderer = mouseFollower.GetComponent<MeshRenderer>();
         Cursor.lockState = CursorLockMode.Confined;
         Cursor.visible = false;
+        multiplierX = 1;
+        multiplierY = 1;
     }
 
     void Update()
@@ -22,31 +28,74 @@ public class MouseManager : MonoBehaviour
         #region Tirar raycast
         if (Physics.Raycast(rayo, out hit))
         {
-            if(!increaseSensitivity)
+            #region Debuffs
+            if (!increaseSensitivity)
             {
-                if (multiplier > 1) multiplier -= Time.deltaTime;
-                mouseFollower.position = hit.point;
+                multiplierX = 0;
+                multiplierY = 0;
+            }
+            else if(!shake)
+            {
+                //Esto causa el efecto de aumento de sensibilidad
+                if (multiplierX < 3) multiplierX += Time.deltaTime;
+                if (multiplierY < 3) multiplierY += Time.deltaTime;
+            }
+
+            //esto el efecto de shake
+            if(shake)
+            {
+                multiplierX = Random.Range(-0.1f,0.2f);
+                multiplierY = Random.Range(-0.1f, 0.2f);
+            }
+
+            if(shake || increaseSensitivity)
+            {
+                if(shake) mouseFollower.position = new Vector3(hit.point.x + multiplierX, hit.point.y + multiplierY, hit.point.z);
+                if (increaseSensitivity) mouseFollower.position = new Vector3(hit.point.x * multiplierX, hit.point.y * multiplierY, hit.point.z);
+            }
+            else mouseFollower.position = hit.point;
+            #endregion
+
+            #region Mirar si Hitteas
+
+            if (hit.collider.CompareTag("Patron"))
+            {
+                outTimer = 0;
+                mouseRenderer.material.color = new Color(0, 0, 255);
             }
             else
             {
-                //Esto causa el efecto de aumento de sensibilidad
-                if(multiplier < 2) multiplier += Time.deltaTime;
-                mouseFollower.position = hit.point * multiplier;
+                if (outTimer < 2.5f) outTimer += Time.deltaTime;
+
+                mouseRenderer.material.color = new Color(outTimer * 10.2f, 0, 255);
             }
-            if (hit.collider.CompareTag("Patron")) Debug.Log(1);
+            #endregion
         }
         #endregion
 
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            if(increaseSensitivity)
+            if (increaseSensitivity)
             {
                 increaseSensitivity = false;
             }
             else
             {
-                multiplier = 1;
                 increaseSensitivity = true;
+                multiplierX = 1;
+                multiplierY = 1;
+            }
+        }
+
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            if (shake)
+            {
+                shake = false;
+            }
+            else
+            {
+                shake = true;
             }
         }
     }
