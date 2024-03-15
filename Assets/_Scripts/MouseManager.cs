@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class MouseManager : MonoBehaviour
 {
-    private Camera myCam;
     public Transform mouseFollower;
+    private bool increaseSensitivity;
+    private float multiplier;
     void Start()
     {
-        myCam = Camera.main;
-
         Cursor.lockState = CursorLockMode.Confined;
-        Cursor.visible = true;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -20,10 +19,35 @@ public class MouseManager : MonoBehaviour
         RaycastHit hit;
         Ray rayo = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(rayo, out hit))
+        #region Tirar raycast
+        if (Physics.Raycast(rayo, out hit))
         {
-            mouseFollower.position = hit.point;
+            if(!increaseSensitivity)
+            {
+                if (multiplier > 1) multiplier -= Time.deltaTime;
+                mouseFollower.position = hit.point;
+            }
+            else
+            {
+                //Esto causa el efecto de aumento de sensibilidad
+                if(multiplier < 2) multiplier += Time.deltaTime;
+                mouseFollower.position = hit.point * multiplier;
+            }
             if (hit.collider.CompareTag("Patron")) Debug.Log(1);
+        }
+        #endregion
+
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            if(increaseSensitivity)
+            {
+                increaseSensitivity = false;
+            }
+            else
+            {
+                multiplier = 1;
+                increaseSensitivity = true;
+            }
         }
     }
 }
