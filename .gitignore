@@ -66,4 +66,4 @@ fmod_editor.log
 
 # Added by user chocobo in https://qa.fmod.com/t/fmod-tip-gitignore-for-the-fmod-integration-in-unity-fmod-unity-gitignore/16283/9.
 /[Aa]ssets/Plugins/FMOD/*
-UserSettings/Layouts/default-2022.dwlt
+*.log
