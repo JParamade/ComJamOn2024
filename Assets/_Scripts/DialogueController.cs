@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
@@ -9,8 +10,11 @@ public class DialogueController : MonoBehaviour
     private GameObject dlgContainer;
     TextMeshProUGUI _textMeshPro;
     private float opacity, texTimer;
+    [SerializeField]
+    private float waitBetween = 0.1f;
 
     [TextArea] public string[] desvarios;
+    public string[] dialogue;
 
     private void Start()
     {
@@ -27,7 +31,7 @@ public class DialogueController : MonoBehaviour
     {
         if (texTimer > 0)
         {
-            ReduceOpacity(0.5f * Time.deltaTime);
+            ReduceOpacity(2.5f * Time.deltaTime);
             texTimer -= Time.deltaTime;
         }
         else
@@ -47,10 +51,9 @@ public class DialogueController : MonoBehaviour
         }
     }
 
-    public void ShowDialogueBox(string dialogue)
+    public void ShowDialogueBox()
     {
         dlgContainer.SetActive(true);
-        NextLine(dialogue);
     }
 
     public void HideDialogueBox() { dlgContainer.SetActive(false); }
@@ -105,6 +108,40 @@ public class DialogueController : MonoBehaviour
             int ran2 = Random.Range(0, desvarios.Length);
             Debug.Log(ran2);
             _textMeshPro.text = desvarios[ran2];
+            StartCoroutine("TextVisible");
+        }else
+        {
+            NextLine(whatToSay);
+            StartCoroutine("TextVisible");
         }
+
+                
     }
+
+
+    private IEnumerator TextVisible()
+    {
+        _textMeshPro.ForceMeshUpdate();
+        int totalVisibleChar = _textMeshPro.textInfo.characterCount;
+        int counter = 0;
+
+        while (true)
+        {
+            int visibleCount = counter % (totalVisibleChar + 1);
+            _textMeshPro.maxVisibleCharacters = visibleCount;
+
+            if (visibleCount >= totalVisibleChar)
+            {
+                break;
+            }
+
+            counter++;
+            yield return new WaitForSeconds(waitBetween);
+
+        }
+
+
+    }
+
+
 }
