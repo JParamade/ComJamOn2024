@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
     public int ActualValue()
     {
         actualValue = Mathf.Lerp(actualValue, targetValue, Time.deltaTime);
-        int correctedValue 
+        int correctedValue = (it)
 
         return correctedValue;
     } 
