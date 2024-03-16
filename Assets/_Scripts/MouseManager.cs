@@ -10,6 +10,9 @@ public class MouseManager : MonoBehaviour
     public bool increaseSensitivity, shake;
     private float multiplierX, multiplierY, outTimer;
 
+    public float MultiplierX { get => multiplierX; set => multiplierX = value; }
+    public float MultiplierY { get => multiplierY; set => multiplierY = value; }
+
     void Start()
     {
         mouseRenderer = mouseFollower.GetComponent<MeshRenderer>();
