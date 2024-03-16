@@ -9,9 +9,10 @@ public class MouseManager : MonoBehaviour
 
     public bool increaseSensitivity, shake;
     private float multiplierX, multiplierY, outTimer;
+    private float Locura;
 
-    public float MultiplierX { get => multiplierX; set => multiplierX = value; }
-    public float MultiplierY { get => multiplierY; set => multiplierY = value; }
+    public float MultiplierX { get => multiplierX * Locura; set => multiplierX = value; }
+    public float MultiplierY { get => multiplierY * Locura; set => multiplierY = value; }
 
     void Start()
     {
@@ -53,8 +54,8 @@ public class MouseManager : MonoBehaviour
 
             if(shake || increaseSensitivity)
             {
-                if(shake) mouseFollower.position = new Vector3(hit.point.x + multiplierX, hit.point.y + multiplierY, hit.point.z);
-                if (increaseSensitivity) mouseFollower.position = new Vector3(hit.point.x * multiplierX, hit.point.y * multiplierY, hit.point.z);
+                if(shake) mouseFollower.position = new Vector3(hit.point.x + MultiplierX, hit.point.y + MultiplierY, hit.point.z);
+                if (increaseSensitivity) mouseFollower.position = new Vector3(hit.point.x * MultiplierX, hit.point.y * MultiplierY, hit.point.z);
             }
             else mouseFollower.position = hit.point;
             #endregion
