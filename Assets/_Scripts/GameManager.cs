@@ -5,12 +5,6 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [Header("Resource Value")]
-
-    [Range(0, 999)]
-    [SerializeField] float targetValue = 999;
-    float actualValue = 999;
-
     public static GameManager Instance { get; private set; }
 
     private void Awake()
@@ -20,17 +14,4 @@ public class GameManager : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
     }
-
-    private void Update()
-    {
-        
-    }
-
-    public int ActualValue()
-    {
-        actualValue = Mathf.Lerp(actualValue, targetValue, Time.deltaTime);
-        int correctedValue = (it)
-
-        return correctedValue;
-    } 
 }
