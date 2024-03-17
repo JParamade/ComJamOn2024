@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MouseManager : MonoBehaviour
 {
@@ -8,9 +9,10 @@ public class MouseManager : MonoBehaviour
     private MeshRenderer mouseRenderer;
     [SerializeField] SceneManagement mySceneManager;
     private Points currentPoints;
+    [SerializeField] private Image bloodyScreen;
 
     public bool increaseSensitivity, shake;
-    private float multiplierX, multiplierY, outTimer;
+    private float multiplierX, multiplierY, outTimer, colorMultiply;
     private float Locura;
 
     public float MultiplierX { get => multiplierX * Locura; set => multiplierX = value; }
@@ -71,19 +73,24 @@ public class MouseManager : MonoBehaviour
                 if (currentPoints == null) currentPoints = hit.transform.parent.gameObject.GetComponent<Points>();
                 currentPoints.CheckPoints(mouseFollower.position);
                 if (currentPoints.Finish) mySceneManager.GoToNextScene();
-                Debug.Log(1);
+                if (colorMultiply > 0) colorMultiply -= Time.deltaTime;
+                bloodyScreen.color = new Color(bloodyScreen.color.r, bloodyScreen.color.g, bloodyScreen.color.b, colorMultiply);
             }
             else
             {
                 if (outTimer < 2.5f) outTimer += Time.deltaTime;
+                else mySceneManager.GoToNextScene();
+
+                if (colorMultiply < 1) colorMultiply += Time.deltaTime;
 
                 mouseRenderer.material.color = new Color(outTimer * 10.2f, 0, 255);
-                Debug.Log(2);
+                bloodyScreen.color = new Color(bloodyScreen.color.r, bloodyScreen.color.g, bloodyScreen.color.b, colorMultiply);
             }
             #endregion
         }
         #endregion
 
+        /*
         if (Input.GetKeyDown(KeyCode.Q))
         {
             if (increaseSensitivity)
@@ -109,5 +116,6 @@ public class MouseManager : MonoBehaviour
                 shake = true;
             }
         }
+        */
     }
 }
