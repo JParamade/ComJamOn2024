@@ -114,10 +114,7 @@ public class DialogueController : MonoBehaviour
             NextLine(whatToSay);
             StartCoroutine("TextVisible");
         }
-
-                
     }
-
 
     private IEnumerator TextVisible()
     {
@@ -139,9 +136,5 @@ public class DialogueController : MonoBehaviour
             yield return new WaitForSeconds(waitBetween);
 
         }
-
-
     }
-
-
 }
