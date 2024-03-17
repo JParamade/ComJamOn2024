@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class MouseManager : MonoBehaviour
 {
+    public static MouseManager Instance { get; private set; }
+
     public Transform mouseFollower;
     private MeshRenderer mouseRenderer;
     [SerializeField] SceneManagement mySceneManager;
