@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
             else { head.SetActive(false); }
         }
     }
+
     public void NextClient() { clientAnimator.SetInteger("state", state);  }
     public void StayClient() { clientAnimator.SetInteger("state", state); }
     public void ClientEnd() { clientAnimator.SetInteger("state", state); }
