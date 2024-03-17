@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{13727a0b-30a9-4eb7-bc55-1c48e157db77}">
+		<property name="assetPath">
+			<value>Music/JazzyShop.mp3</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>46.271999999999998</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{7f7def32-c4f8-4476-9d16-e21d1c45b723}</destination>
+		</relationship>
+	</object>
+</objects>

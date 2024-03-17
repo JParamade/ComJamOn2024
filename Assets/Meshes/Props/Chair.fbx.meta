@@ -3,7 +3,22 @@ guid: 62c3daf490888c3469523fe4af56a774
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: apoyacabezas
+    second: {fileID: 2100000, guid: 4bccf47740d295a42b2d0db7543fb0d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: asiento
+    second: {fileID: 2100000, guid: 4bccf47740d295a42b2d0db7543fb0d0, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: respaldo
+    second: {fileID: 2100000, guid: 4bccf47740d295a42b2d0db7543fb0d0, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
