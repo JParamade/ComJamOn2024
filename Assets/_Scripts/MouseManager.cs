@@ -6,6 +6,8 @@ public class MouseManager : MonoBehaviour
 {
     public Transform mouseFollower;
     private MeshRenderer mouseRenderer;
+    [SerializeField] SceneManagement mySceneManager;
+    private Points currentPoints;
 
     public bool increaseSensitivity, shake;
     private float multiplierX, multiplierY, outTimer;
@@ -66,6 +68,9 @@ public class MouseManager : MonoBehaviour
             {
                 outTimer = 0;
                 mouseRenderer.material.color = new Color(0, 0, 255);
+                if (currentPoints == null) currentPoints = hit.transform.parent.gameObject.GetComponent<Points>();
+                currentPoints.CheckPoints(mouseFollower.position);
+                if (currentPoints.Finish) mySceneManager.GoToNextScene();
                 Debug.Log(1);
             }
             else
