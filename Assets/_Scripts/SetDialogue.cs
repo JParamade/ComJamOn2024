@@ -9,7 +9,6 @@ public class SetDialogue : MonoBehaviour
 
     [SerializeField] DialogueController dialogueController;
     public GameObject nextSceneButton;
-    [SerializeField] private float timer;
 
     void Start()
     {
