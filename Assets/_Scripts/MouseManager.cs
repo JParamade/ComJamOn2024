@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class MouseManager : MonoBehaviour
 {
@@ -16,7 +15,7 @@ public class MouseManager : MonoBehaviour
 
     public bool increaseSensitivity, shake, start;
     private float multiplierX, multiplierY, outTimer, colorMultiply;
-    private float Locura, currentIndex;
+    private float Locura;
 
     public float MultiplierX { get => multiplierX * Locura; set => multiplierX = value; }
     public float MultiplierY { get => multiplierY * Locura; set => multiplierY = value; }
@@ -29,7 +28,6 @@ public class MouseManager : MonoBehaviour
         multiplierX = 1;
         multiplierY = 1;
         start = false;
-        currentIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     void Update()
@@ -85,8 +83,7 @@ public class MouseManager : MonoBehaviour
                     mouseRenderer.material.color = new Color(0, 0, 255);
                     if (currentPoints == null) currentPoints = hit.transform.parent.gameObject.GetComponent<Points>();
                     currentPoints.CheckPoints(mouseFollower.position);
-                    if (currentPoints.Finish && currentIndex != 15) mySceneManager.GoToNextScene();
-                    else Application.Quit();
+                    if (currentPoints.Finish) mySceneManager.GoToNextScene();
                     if (colorMultiply > 0) colorMultiply -= Time.deltaTime;
                     bloodyScreen.color = new Color(bloodyScreen.color.r, bloodyScreen.color.g, bloodyScreen.color.b, colorMultiply);
                 }
@@ -94,7 +91,7 @@ public class MouseManager : MonoBehaviour
             else if (start)
             {
                 if (outTimer < 2.5f) outTimer += Time.deltaTime;
-                else if( currentIndex != 15) mySceneManager.GoToNextScene();
+                else mySceneManager.GoToNextScene();
 
                 if (colorMultiply < 1) colorMultiply += Time.deltaTime;
 

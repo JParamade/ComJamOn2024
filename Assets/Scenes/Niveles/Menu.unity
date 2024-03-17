@@ -1570,7 +1570,10 @@ RectTransform:
   m_Children:
   - {fileID: 924047700}
   - {fileID: 999057039}
+<<<<<<< HEAD
   - {fileID: 1733261112}
+=======
+>>>>>>> parent of f740335 (Merge branch 'main' of https://github.com/JParamade/ComJamOn2024)
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

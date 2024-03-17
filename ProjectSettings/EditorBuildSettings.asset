@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Niveles/Menu.unity
-    guid: 7202e20d2afce214db41e939c2b5c0ca
-  - enabled: 1
     path: Assets/Scenes/Niveles/Barber levels/BarberShop.unity
     guid: 77703a0ad684b5741b08db622a90a6a7
   - enabled: 1
@@ -30,27 +27,30 @@ EditorBuildSettings:
     path: Assets/Scenes/Niveles/Barber levels/BarberShop 4.unity
     guid: 6d2895ee392952f4586f5dc651982a6e
   - enabled: 1
-    path: Assets/Scenes/Niveles/Espejo Levels/Espejo5.unity
-    guid: 831a8173b09cd384a97b86e5d252b4a8
+    path: Assets/Scenes/Niveles/Espejo Levels/Espejo4.unity
+    guid: 6e8f29656216c9a4090adeb598fcd4fb
   - enabled: 1
     path: Assets/Scenes/Niveles/Barber levels/BarberShop 5.unity
     guid: 79eea97fc6d3357469336227284d03b0
   - enabled: 1
-    path: Assets/Scenes/Niveles/Espejo Levels/Espejo6.unity
-    guid: fa702f8ceecc37e4aa83827cc204b636
+    path: Assets/Scenes/Niveles/Espejo Levels/Espejo5.unity
+    guid: 831a8173b09cd384a97b86e5d252b4a8
   - enabled: 1
     path: Assets/Scenes/Niveles/Barber levels/BarberShop 6.unity
     guid: 4818a7e17ba4f7d4bba16f81e24afc78
   - enabled: 1
-    path: Assets/Scenes/Niveles/Espejo Levels/Espejo7.unity
-    guid: 73dd026a1e92c2d4d88755dec96f71b4
+    path: Assets/Scenes/Niveles/Espejo Levels/Espejo6.unity
+    guid: fa702f8ceecc37e4aa83827cc204b636
   - enabled: 1
     path: Assets/Scenes/Niveles/Barber levels/BarberShop 7.unity
     guid: 16065a6230514ee41b71dc5aa9db219f
   - enabled: 1
-    path: Assets/Scenes/Niveles/Espejo Levels/Espejo8.unity
-    guid: 9fbfd12c24d7cb4438d30e886e588e18
+    path: Assets/Scenes/Niveles/Espejo Levels/Espejo7.unity
+    guid: 73dd026a1e92c2d4d88755dec96f71b4
   - enabled: 1
     path: Assets/Scenes/Niveles/Barber levels/BarberShop 8.unity
     guid: 89b83d9e4fb5a394eb3c202c698dce12
+  - enabled: 1
+    path: Assets/Scenes/Niveles/Espejo Levels/Espejo8.unity
+    guid: 9fbfd12c24d7cb4438d30e886e588e18
   m_configObjects: {}
