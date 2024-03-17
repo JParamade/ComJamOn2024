@@ -363,9 +363,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d01b959b82d2cba41852b3c049eca53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "My hands are tired, my body is heavy, do I not deserve a break? \nAm I not
-    more than\r\nan animal?\n They come in everyday and treat me horribly, I don\u2019t
-    know how much\r\nmore I can stand.\r"
+  text: "Who are they to treat me like this? Who are they to bark and squeal to someone
+    who\r\nshould be their equal? Do they not see me?\r"
   dialogueController: {fileID: 602714574}
   nextSceneButton: {fileID: 843759766}
 --- !u!114 &602714574
@@ -563,6 +562,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 843759766}
   m_CullTransparentMesh: 1
+--- !u!1001 &863864911
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.088
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -3.21
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -7.165
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 180
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 674346fd4a179074fa44808518b14bee, type: 3}
+      propertyPath: m_Name
+      value: Barber
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 674346fd4a179074fa44808518b14bee, type: 3}
 --- !u!1 &926788894
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +755,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 12.3796, y: -340}
+  m_AnchoredPosition: {x: 12.3796, y: -273}
   m_SizeDelta: {x: 450, y: 378.8986}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1188118893
@@ -741,13 +805,13 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
-  m_fontStyle: 0
+  m_fontStyle: 1
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -777,7 +841,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -30.263672, y: -18.62738, z: -28.648682, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -1101,3 +1165,4 @@ SceneRoots:
   - {fileID: 487294617}
   - {fileID: 1375779702}
   - {fileID: 1196448612}
+  - {fileID: 863864911}

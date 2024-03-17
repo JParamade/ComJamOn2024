@@ -148,6 +148,7 @@ GameObject:
   - component: {fileID: 1812465428539177592}
   - component: {fileID: 2230541391585308957}
   - component: {fileID: 5072633065115921771}
+  - component: {fileID: 574565610719694275}
   m_Layer: 0
   m_Name: "Patr\xF3n object 4"
   m_TagString: Untagged
@@ -247,6 +248,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &574565610719694275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2251713277687089047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7408dfa39e3168b46b217545f906e355, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Puntos:
+  - {fileID: 3448713214799149056}
+  - {fileID: 2753459187144831028}
+  - {fileID: 6278170126060637367}
+  - {fileID: 1747073400911824964}
+  Finish: 0
+  distancia: 0.1
 --- !u!1 &3386225911026458867
 GameObject:
   m_ObjectHideFlags: 0
