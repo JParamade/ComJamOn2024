@@ -11,7 +11,7 @@ public class MouseManager : MonoBehaviour
     private Points currentPoints;
     [SerializeField] private Image bloodyScreen;
 
-    public bool increaseSensitivity, shake;
+    public bool increaseSensitivity, shake, start;
     private float multiplierX, multiplierY, outTimer, colorMultiply;
     private float Locura;
 
@@ -25,6 +25,7 @@ public class MouseManager : MonoBehaviour
         Cursor.visible = false;
         multiplierX = 1;
         multiplierY = 1;
+        start = false;
     }
 
     void Update()
@@ -68,15 +69,24 @@ public class MouseManager : MonoBehaviour
 
             if (hit.collider.CompareTag("Patron"))
             {
-                outTimer = 0;
-                mouseRenderer.material.color = new Color(0, 0, 255);
-                if (currentPoints == null) currentPoints = hit.transform.parent.gameObject.GetComponent<Points>();
-                currentPoints.CheckPoints(mouseFollower.position);
-                if (currentPoints.Finish) mySceneManager.GoToNextScene();
-                if (colorMultiply > 0) colorMultiply -= Time.deltaTime;
-                bloodyScreen.color = new Color(bloodyScreen.color.r, bloodyScreen.color.g, bloodyScreen.color.b, colorMultiply);
-            }
-            else
+                if(Input.GetKeyDown(KeyCode.Mouse0) && !start)
+                {
+                    start = true;
+                    GameManager.Instance.CallClient();
+                }
+
+                if(start)
+                {
+                    outTimer = 0;
+                    mouseRenderer.material.color = new Color(0, 0, 255);
+                    if (currentPoints == null) currentPoints = hit.transform.parent.gameObject.GetComponent<Points>();
+                    currentPoints.CheckPoints(mouseFollower.position);
+                    if (currentPoints.Finish) mySceneManager.GoToNextScene();
+                    if (colorMultiply > 0) colorMultiply -= Time.deltaTime;
+                    bloodyScreen.color = new Color(bloodyScreen.color.r, bloodyScreen.color.g, bloodyScreen.color.b, colorMultiply);
+                }
+            }  
+            else if (start)
             {
                 if (outTimer < 2.5f) outTimer += Time.deltaTime;
                 else mySceneManager.GoToNextScene();
