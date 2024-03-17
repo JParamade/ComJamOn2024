@@ -15,6 +15,7 @@ public class DialogueController : MonoBehaviour
 
     [TextArea] public string[] desvarios;
     public string[] dialogue;
+    public bool textDisplayed;
 
     private void Start()
     {
@@ -121,6 +122,7 @@ public class DialogueController : MonoBehaviour
         _textMeshPro.ForceMeshUpdate();
         int totalVisibleChar = _textMeshPro.textInfo.characterCount;
         int counter = 0;
+        textDisplayed = false;
 
         while (true)
         {
@@ -129,6 +131,7 @@ public class DialogueController : MonoBehaviour
 
             if (visibleCount >= totalVisibleChar)
             {
+                textDisplayed = true;
                 break;
             }
 

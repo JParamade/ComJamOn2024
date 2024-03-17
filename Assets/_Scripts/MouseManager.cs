@@ -66,12 +66,14 @@ public class MouseManager : MonoBehaviour
             {
                 outTimer = 0;
                 mouseRenderer.material.color = new Color(0, 0, 255);
+                Debug.Log(1);
             }
             else
             {
                 if (outTimer < 2.5f) outTimer += Time.deltaTime;
 
                 mouseRenderer.material.color = new Color(outTimer * 10.2f, 0, 255);
+                Debug.Log(2);
             }
             #endregion
         }
