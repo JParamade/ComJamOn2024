@@ -15,6 +15,7 @@ public class SetDialogue : MonoBehaviour
         //Aqui pones el texto del espejo para que aparezca
         dialogueController.ActivateText(100000,text);
         nextSceneButton.SetActive(false);
+        Cursor.visible = true;
     }
 
     private void Update()

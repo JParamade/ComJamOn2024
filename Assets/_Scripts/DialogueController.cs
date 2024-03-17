@@ -11,7 +11,7 @@ public class DialogueController : MonoBehaviour
     [SerializeField] TextMeshProUGUI _textMeshPro;
     private float opacity, texTimer;
     [SerializeField]
-    private float waitBetween = 0.1f;
+    private float waitBetween = 0.05f;
 
     [TextArea] public string[] desvarios;
     public string[] dialogue;
@@ -107,7 +107,6 @@ public class DialogueController : MonoBehaviour
         if(whatToSay == null)
         {
             int ran2 = Random.Range(0, desvarios.Length);
-            Debug.Log(ran2);
             _textMeshPro.text = desvarios[ran2];
             StartCoroutine("TextVisible");
         }else
