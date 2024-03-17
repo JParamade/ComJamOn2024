@@ -12,7 +12,7 @@ public class IncreaseSensibility : PutadaBase
     private void Awake()
     {
         totalDuration = duration;
-
+        //this.GetComponent<IncreaseSensibility>().enabled = false;
     }
     public override void Efecto()
     {

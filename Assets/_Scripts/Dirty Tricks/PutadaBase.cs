@@ -7,10 +7,7 @@ public class PutadaBase : State
 {
 
 
-    private void Start()
-    {
-        
-    }
+    
     private void Update()
     {
         Efecto();
@@ -35,6 +32,11 @@ public class PutadaBase : State
     public void ActivateCameraShake()
     {
         this.GetComponent<CameraShake>().enabled = true;
+    }
+
+    public void ActivateSensibilityIncrease()
+    {
+        this.GetComponent<IncreaseSensibility>().enabled = true;
     }
 
 
