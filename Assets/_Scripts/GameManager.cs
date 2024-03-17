@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,5 +33,10 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(temp);
         _stateMachine.ChangeState(nORMAL);
 
+    }
+
+    public void GoToNextScene()
+    {
+        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1));
     }
 }
