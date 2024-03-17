@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PutadaBase : State
 {
-    public float Duracion;
-    public Enums Type;
 
 
+    private void Start()
+    {
+        
+    }
+    private void Update()
+    {
+        Efecto();
+    }
     public virtual void Efecto()
     {
 
@@ -18,11 +25,16 @@ public class PutadaBase : State
     }
     public override void Enter()
     {
-        Efecto();
+        
     }
     public override void Exid()
     {
-        EliminarEfecto();
+        //EliminarEfecto();
+    }
+
+    public void ActivateCameraShake()
+    {
+        this.GetComponent<CameraShake>().enabled = true;
     }
 
 

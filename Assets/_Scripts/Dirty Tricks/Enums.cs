@@ -5,5 +5,6 @@ using UnityEngine;
 public enum Enums 
 {
     Shake,
-    IncreaseSensibility
+    IncreaseSensibility,
+    CameraShake
 }
