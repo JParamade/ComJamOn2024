@@ -5,9 +5,18 @@ using UnityEngine;
 
 public class PutadaBase : State
 {
+    public static PutadaBase Instance { get; private set; }
 
 
-    
+    private void Start()
+    {
+        if (PutadaBase.Instance != null)
+        {
+            Destroy(this);
+        }
+    }
+
+
     private void Update()
     {
         Efecto();
