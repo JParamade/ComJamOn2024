@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class DialogueController : MonoBehaviour
 {
-    [SerializeField]
-    private GameObject dlgContainer;
-    TextMeshProUGUI _textMeshPro;
+
+    [SerializeField] private GameObject dlgContainer;
+    [SerializeField] TextMeshProUGUI _textMeshPro;
     private float opacity, texTimer;
     [SerializeField]
     private float waitBetween = 0.1f;
@@ -97,7 +97,7 @@ public class DialogueController : MonoBehaviour
         }
         #endregion
 
-        _textMeshPro.color = new Color(0, 0, 0, opacity);
+        _textMeshPro.color = new Color(255, 255, 255, opacity);
     }
     public void ActivateText(int howLong, string whatToSay)
     {

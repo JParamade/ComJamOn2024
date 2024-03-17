@@ -379,6 +379,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dlgContainer: {fileID: 1188118891}
+  _textMeshPro: {fileID: 1188118893}
   waitBetween: 0.1
   desvarios: []
   dialogue: []
