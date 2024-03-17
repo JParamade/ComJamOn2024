@@ -49,11 +49,6 @@ public class GameManager : MonoBehaviour
 
             nextClient = false;
         }
-
-        if (Input.GetKeyDown(KeyCode.P)) { 
-            if (coroutine != null) { StopCoroutine(coroutine); }
-            nextClient = true; 
-        }
     }
 
     public IEnumerator CallPutada(float NivelLocura, float temp)
@@ -100,5 +95,11 @@ public class GameManager : MonoBehaviour
         clientAnimator.SetInteger("state", 2);
         yield return new WaitForSeconds(1);
         clientAnimator.SetInteger("state", 3);
+    }
+
+    public void CallClient()
+    {
+        if (coroutine != null) { StopCoroutine(coroutine); }
+        nextClient = true;
     }
 }
