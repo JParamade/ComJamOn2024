@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -13,9 +14,18 @@ public class GameManager : MonoBehaviour
     public float locura;
 
     public List<GameObject> heads;
+    public List<GameObject> hair;
+    public List<GameObject> eyes;
+    public List<GameObject> skin;
+    public List<Material> skinMat;
+    public List<Material> hairMat;
+    public List<Material> eyesMat;
+
+    public Transform client;
     public Animator clientAnimator;
 
-    public int state = 0;
+    bool nextClient = false;
+    Coroutine coroutine;
 
     private void Awake()
     {
@@ -32,11 +42,18 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (state == 1) { NextClient(); }
-        else if (state == 2) { StayClient(); }
-        else if (state == 3) { ClientEnd(); }
+        if (nextClient)
+        {
+            RandomHead();
+            coroutine = StartCoroutine(NextClient());
 
-        if (Input.GetKeyDown(KeyCode.P)) { state++; }
+            nextClient = false;
+        }
+
+        if (Input.GetKeyDown(KeyCode.P)) { 
+            if (coroutine != null) { StopCoroutine(coroutine); }
+            nextClient = true; 
+        }
     }
 
     public IEnumerator CallPutada(float NivelLocura, float temp)
@@ -61,9 +78,31 @@ public class GameManager : MonoBehaviour
             if (heads[randomHead] == head) { head.SetActive(true); }
             else { head.SetActive(false); }
         }
+
+        int randomSkin = Random.Range(0, skinMat.Count);
+        foreach (GameObject skin in skin)
+        {
+            skin.GetComponent<MeshRenderer>().material = skinMat[randomSkin]; 
+        }
+
+        int randomEyes = Random.Range(0, eyesMat.Count);
+        foreach (GameObject eyes in eyes)
+        {
+            eyes.GetComponent<MeshRenderer>().materials[1] = eyesMat[randomEyes];
+        }
+        
+        int randomHair = Random.Range(0, hairMat.Count);
+        foreach (GameObject hair in hair) {
+            hair.GetComponent<MeshRenderer>().material = hairMat[randomHair];
+        }
     }
 
-    public void NextClient() { clientAnimator.SetInteger("state", state);  }
-    public void StayClient() { clientAnimator.SetInteger("state", state); }
-    public void ClientEnd() { clientAnimator.SetInteger("state", state); }
+    IEnumerator NextClient()
+    {
+        clientAnimator.SetInteger("state", 1);
+        yield return new WaitForSeconds(1);
+        clientAnimator.SetInteger("state", 2);
+        yield return new WaitForSeconds(1);
+        clientAnimator.SetInteger("state", 3);
+    }
 }
