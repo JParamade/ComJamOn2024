@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,8 +30,6 @@ public class GameManager : MonoBehaviour
     {
         if (Instance == null) { Instance = this; }
         else { Destroy(gameObject); }
-
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()

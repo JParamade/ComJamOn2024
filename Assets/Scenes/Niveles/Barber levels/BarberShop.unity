@@ -523,18 +523,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 432090600577623958, guid: c09fc682b7c2d294aaa43dff03e6bc64, type: 3}
-      propertyPath: distancia
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890078507614107752, guid: c09fc682b7c2d294aaa43dff03e6bc64, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1890078507614107752, guid: c09fc682b7c2d294aaa43dff03e6bc64, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.5
-      objectReference: {fileID: 0}
     - target: {fileID: 1890078507614107752, guid: c09fc682b7c2d294aaa43dff03e6bc64, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3309,6 +3297,7 @@ MonoBehaviour:
   bloodyScreen: {fileID: 1112578354}
   increaseSensitivity: 0
   shake: 0
+  start: 0
 --- !u!4 &1758192236
 Transform:
   m_ObjectHideFlags: 0
@@ -3640,6 +3629,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1994129591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3593047210371265695, guid: b0da6b130ee949e47b9c0848eb118dbd, type: 3}

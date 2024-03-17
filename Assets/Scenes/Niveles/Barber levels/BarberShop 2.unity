@@ -1651,6 +1651,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2230541391585308957, guid: 8518cbedcae373043b81a0f9c6b0808c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2251713277687089047, guid: 8518cbedcae373043b81a0f9c6b0808c, type: 3}
       propertyPath: m_Name
       value: "Patr\xF3n object 1"
@@ -3637,6 +3641,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attenuationObject: {fileID: 0}
 --- !u!1 &1994129591 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: -3593047210371265695, guid: b0da6b130ee949e47b9c0848eb118dbd, type: 3}

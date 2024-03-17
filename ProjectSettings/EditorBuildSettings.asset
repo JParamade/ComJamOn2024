@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Niveles/Menu.unity
+    guid: 041edc23a2a1f504eb96544213932c9b
+  - enabled: 1
     path: Assets/Scenes/Niveles/Barber levels/BarberShop.unity
     guid: 77703a0ad684b5741b08db622a90a6a7
   - enabled: 1
