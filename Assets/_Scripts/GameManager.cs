@@ -48,10 +48,6 @@ public class GameManager : MonoBehaviour
         _stateMachine.ChangeState(nORMAL);
     }
 
-    public void GoToNextScene()
-    {
-        SceneManager.SetActiveScene(SceneManager.GetSceneByBuildIndex(SceneManager.GetActiveScene().buildIndex + 1));
-    }
 
     public void RandomHead() {
         int randomHead = Random.Range(0, heads.Count);
